@@ -46,8 +46,10 @@ async bulkCreateVendors(
 ```ts
 const body: BulkCreateVendorsRequest = {
   vendors: {
-    'key0': {},
-    'key1': {}
+    'key0': {
+    },
+    'key1': {
+    }
   },
 };
 
@@ -136,10 +138,12 @@ async bulkUpdateVendors(
 const body: BulkUpdateVendorsRequest = {
   vendors: {
     'key0': {
-      vendor: {},
+      vendor: {
+      },
     },
     'key1': {
-      vendor: {},
+      vendor: {
+      },
     }
   },
 };
@@ -224,7 +228,8 @@ async searchVendors(
 ## Example Usage
 
 ```ts
-const body: SearchVendorsRequest = {};
+const body: SearchVendorsRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await vendorsApi.searchVendors(body);

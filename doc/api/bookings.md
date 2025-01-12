@@ -118,7 +118,8 @@ async createBooking(
 
 ```ts
 const body: CreateBookingRequest = {
-  booking: {},
+  booking: {
+  },
 };
 
 try {
@@ -165,7 +166,8 @@ async searchAvailability(
 const body: SearchAvailabilityRequest = {
   query: {
     filter: {
-      startAtRange: {},
+      startAtRange: {
+      },
     },
   },
 };
@@ -366,7 +368,7 @@ async listTeamMemberBookingProfiles(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `bookableOnly` | `boolean \| undefined` | Query, Optional | Indicates whether to include only bookable team members in the returned result (`true`) or not (`false`). |
+| `bookableOnly` | `boolean \| undefined` | Query, Optional | Indicates whether to include only bookable team members in the returned result (`true`) or not (`false`).<br>**Default**: `false` |
 | `limit` | `number \| undefined` | Query, Optional | The maximum number of results to return in a paged response. |
 | `cursor` | `string \| undefined` | Query, Optional | The pagination cursor from the preceding response to return the next page of the results. Do not set this when retrieving the first page of the results. |
 | `locationId` | `string \| undefined` | Query, Optional | Indicates whether to include only team members enabled at the given location in the returned result. |
@@ -559,7 +561,8 @@ async updateBooking(
 const bookingId = 'booking_id4';
 
 const body: UpdateBookingRequest = {
-  booking: {},
+  booking: {
+  },
 };
 
 try {
@@ -613,7 +616,8 @@ async cancelBooking(
 ```ts
 const bookingId = 'booking_id4';
 
-const body: CancelBookingRequest = {};
+const body: CancelBookingRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await bookingsApi.cancelBooking(

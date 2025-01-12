@@ -507,7 +507,8 @@ async pauseSubscription(
 ```ts
 const subscriptionId = 'subscription_id0';
 
-const body: PauseSubscriptionRequest = {};
+const body: PauseSubscriptionRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await subscriptionsApi.pauseSubscription(
@@ -554,7 +555,8 @@ async resumeSubscription(
 ```ts
 const subscriptionId = 'subscription_id0';
 
-const body: ResumeSubscriptionRequest = {};
+const body: ResumeSubscriptionRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await subscriptionsApi.resumeSubscription(

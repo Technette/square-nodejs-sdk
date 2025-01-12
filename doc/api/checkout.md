@@ -235,7 +235,8 @@ async updateLocationSettings(
 const locationId = 'location_id4';
 
 const body: UpdateLocationSettingsRequest = {
-  locationSettings: {},
+  locationSettings: {
+  },
 };
 
 try {
@@ -316,7 +317,8 @@ async updateMerchantSettings(
 
 ```ts
 const body: UpdateMerchantSettingsRequest = {
-  merchantSettings: {},
+  merchantSettings: {
+  },
 };
 
 try {

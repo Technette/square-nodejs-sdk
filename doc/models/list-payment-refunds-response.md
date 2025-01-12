@@ -59,6 +59,21 @@ Either `errors` or `refunds` is present in a given response (never both).
           },
           "entry_method": "entry_method8",
           "auth_result_code": "auth_result_code0"
+        },
+        "cash_details": {
+          "seller_supplied_money": {
+            "amount": 36,
+            "currency": "MKD"
+          },
+          "change_back_money": {
+            "amount": 78,
+            "currency": "XBD"
+          }
+        },
+        "external_details": {
+          "type": "type6",
+          "source": "source0",
+          "source_id": "source_id8"
         }
       }
     }
@@ -66,13 +81,13 @@ Either `errors` or `refunds` is present in a given response (never both).
   "errors": [
     {
       "category": "MERCHANT_SUBSCRIPTION_ERROR",
-      "code": "MAP_KEY_LENGTH_TOO_LONG",
+      "code": "INVALID_EXPIRATION",
       "detail": "detail6",
       "field": "field4"
     },
     {
       "category": "MERCHANT_SUBSCRIPTION_ERROR",
-      "code": "MAP_KEY_LENGTH_TOO_LONG",
+      "code": "INVALID_EXPIRATION",
       "detail": "detail6",
       "field": "field4"
     }

@@ -293,13 +293,10 @@ async bulkDeleteLocationCustomAttributes(
 const body: BulkDeleteLocationCustomAttributesRequest = {
   values: {
     'id1': {
-      key: 'bestseller',
     },
     'id2': {
-      key: 'bestseller',
     },
     'id3': {
-      key: 'phone-number',
     }
   },
 };
@@ -355,11 +352,13 @@ const body: BulkUpsertLocationCustomAttributesRequest = {
   values: {
     'key0': {
       locationId: 'location_id4',
-      customAttribute: {},
+      customAttribute: {
+      },
     },
     'key1': {
       locationId: 'location_id4',
-      customAttribute: {},
+      customAttribute: {
+      },
     }
   },
 };
@@ -405,7 +404,7 @@ async listLocationCustomAttributes(
 | `visibilityFilter` | [`string \| undefined`](../../doc/models/visibility-filter.md) | Query, Optional | Filters the `CustomAttributeDefinition` results by their `visibility` values. |
 | `limit` | `number \| undefined` | Query, Optional | The maximum number of results to return in a single paged response. This limit is advisory.<br>The response might contain more or fewer results. The minimum value is 1 and the maximum value is 100.<br>The default value is 20. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). |
 | `cursor` | `string \| undefined` | Query, Optional | The cursor returned in the paged response from the previous call to this endpoint.<br>Provide this cursor to retrieve the next page of results for your original request. For more<br>information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). |
-| `withDefinitions` | `boolean \| undefined` | Query, Optional | Indicates whether to return the [custom attribute definition](entity:CustomAttributeDefinition) in the `definition` field of each<br>custom attribute. Set this parameter to `true` to get the name and description of each custom<br>attribute, information about the data type, or other definition details. The default value is `false`. |
+| `withDefinitions` | `boolean \| undefined` | Query, Optional | Indicates whether to return the [custom attribute definition](entity:CustomAttributeDefinition) in the `definition` field of each<br>custom attribute. Set this parameter to `true` to get the name and description of each custom<br>attribute, information about the data type, or other definition details. The default value is `false`.<br>**Default**: `false` |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
@@ -511,7 +510,7 @@ async retrieveLocationCustomAttribute(
 |  --- | --- | --- | --- |
 | `locationId` | `string` | Template, Required | The ID of the target [location](entity:Location). |
 | `key` | `string` | Template, Required | The key of the custom attribute to retrieve. This key must match the `key` of a custom<br>attribute definition in the Square seller account. If the requesting application is not the<br>definition owner, you must use the qualified key. |
-| `withDefinition` | `boolean \| undefined` | Query, Optional | Indicates whether to return the [custom attribute definition](entity:CustomAttributeDefinition) in the `definition` field of<br>the custom attribute. Set this parameter to `true` to get the name and description of the custom<br>attribute, information about the data type, or other definition details. The default value is `false`. |
+| `withDefinition` | `boolean \| undefined` | Query, Optional | Indicates whether to return the [custom attribute definition](entity:CustomAttributeDefinition) in the `definition` field of<br>the custom attribute. Set this parameter to `true` to get the name and description of the custom<br>attribute, information about the data type, or other definition details. The default value is `false`.<br>**Default**: `false` |
 | `version` | `number \| undefined` | Query, Optional | The current version of the custom attribute, which is used for strongly consistent reads to<br>guarantee that you receive the most up-to-date data. When included in the request, Square<br>returns the specified version or a higher version if one exists. If the specified version is<br>higher than the current version, Square returns a `BAD_REQUEST` error. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -584,7 +583,8 @@ const locationId = 'location_id4';
 const key = 'key0';
 
 const body: UpsertLocationCustomAttributeRequest = {
-  customAttribute: {},
+  customAttribute: {
+  },
 };
 
 try {

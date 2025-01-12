@@ -1,5 +1,6 @@
 import {
   bigint,
+  boolean,
   nullable,
   number,
   object,
@@ -27,7 +28,7 @@ export interface ListPaymentsRequest {
    */
   endTime?: string | null;
   /**
-   * The order in which results are listed by `Payment.created_at`:
+   * The order in which results are listed by `ListPaymentsRequest.sort_field`:
    * - `ASC` - Oldest to newest.
    * - `DESC` - Newest to oldest (default).
    */
@@ -57,6 +58,35 @@ export interface ListPaymentsRequest {
    * Default: `100`
    */
   limit?: number | null;
+  /** Whether the payment was taken offline or not. */
+  isOfflinePayment?: boolean | null;
+  /**
+   * Indicates the start of the time range for which to retrieve offline payments, in RFC 3339
+   * format for timestamps. The range is determined using the
+   * `offline_payment_details.client_created_at` field for each Payment. If set, payments without a
+   * value set in `offline_payment_details.client_created_at` will not be returned.
+   * Default: The current time.
+   */
+  offlineBeginTime?: string | null;
+  /**
+   * Indicates the end of the time range for which to retrieve offline payments, in RFC 3339
+   * format for timestamps. The range is determined using the
+   * `offline_payment_details.client_created_at` field for each Payment. If set, payments without a
+   * value set in `offline_payment_details.client_created_at` will not be returned.
+   * Default: The current time.
+   */
+  offlineEndTime?: string | null;
+  /**
+   * Indicates the start of the time range to retrieve payments for, in RFC 3339 format.  The
+   * range is determined using the `updated_at` field for each Payment.
+   */
+  updatedAtBeginTime?: string | null;
+  /**
+   * Indicates the end of the time range to retrieve payments for, in RFC 3339 format.  The
+   * range is determined using the `updated_at` field for each Payment.
+   */
+  updatedAtEndTime?: string | null;
+  sortField?: string;
 }
 
 export const listPaymentsRequestSchema: Schema<ListPaymentsRequest> = object({
@@ -69,4 +99,10 @@ export const listPaymentsRequestSchema: Schema<ListPaymentsRequest> = object({
   last4: ['last_4', optional(nullable(string()))],
   cardBrand: ['card_brand', optional(nullable(string()))],
   limit: ['limit', optional(nullable(number()))],
+  isOfflinePayment: ['is_offline_payment', optional(nullable(boolean()))],
+  offlineBeginTime: ['offline_begin_time', optional(nullable(string()))],
+  offlineEndTime: ['offline_end_time', optional(nullable(string()))],
+  updatedAtBeginTime: ['updated_at_begin_time', optional(nullable(string()))],
+  updatedAtEndTime: ['updated_at_end_time', optional(nullable(string()))],
+  sortField: ['sort_field', optional(string())],
 });

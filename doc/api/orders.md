@@ -453,7 +453,8 @@ async updateOrder(
 ```ts
 const orderId = 'order_id6';
 
-const body: UpdateOrderRequest = {};
+const body: UpdateOrderRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await ordersApi.updateOrder(

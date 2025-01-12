@@ -1,6 +1,6 @@
 export * from './client';
 export * from './configuration';
-export type { ApiResponse } from './core'
+export type { ApiResponse } from './core';
 export {
   AbortError,
   ArgumentsValidationError,
@@ -293,6 +293,8 @@ export type { CreateInvoiceAttachmentRequest } from './models/createInvoiceAttac
 export type { CreateInvoiceAttachmentResponse } from './models/createInvoiceAttachmentResponse';
 export type { CreateInvoiceRequest } from './models/createInvoiceRequest';
 export type { CreateInvoiceResponse } from './models/createInvoiceResponse';
+export type { CreateJobRequest } from './models/createJobRequest';
+export type { CreateJobResponse } from './models/createJobResponse';
 export type { CreateLocationCustomAttributeDefinitionRequest } from './models/createLocationCustomAttributeDefinitionRequest';
 export type { CreateLocationCustomAttributeDefinitionResponse } from './models/createLocationCustomAttributeDefinitionResponse';
 export type { CreateLocationRequest } from './models/createLocationRequest';
@@ -387,6 +389,8 @@ export type { DeprecatedCreateDisputeEvidenceTextResponse } from './models/depre
 export type { Destination } from './models/destination';
 export type { DestinationDetails } from './models/destinationDetails';
 export type { DestinationDetailsCardRefundDetails } from './models/destinationDetailsCardRefundDetails';
+export type { DestinationDetailsCashRefundDetails } from './models/destinationDetailsCashRefundDetails';
+export type { DestinationDetailsExternalRefundDetails } from './models/destinationDetailsExternalRefundDetails';
 export type { Device } from './models/device';
 export type { DeviceAttributes } from './models/deviceAttributes';
 export type { DeviceCheckoutOptions } from './models/deviceCheckoutOptions';
@@ -479,6 +483,7 @@ export type { InvoiceRecipient } from './models/invoiceRecipient';
 export type { InvoiceRecipientTaxIds } from './models/invoiceRecipientTaxIds';
 export type { InvoiceSort } from './models/invoiceSort';
 export type { ItemVariationLocationOverrides } from './models/itemVariationLocationOverrides';
+export type { Job } from './models/job';
 export type { JobAssignment } from './models/jobAssignment';
 export type { LinkCustomerToGiftCardRequest } from './models/linkCustomerToGiftCardRequest';
 export type { LinkCustomerToGiftCardResponse } from './models/linkCustomerToGiftCardResponse';
@@ -530,6 +535,8 @@ export type { ListGiftCardsRequest } from './models/listGiftCardsRequest';
 export type { ListGiftCardsResponse } from './models/listGiftCardsResponse';
 export type { ListInvoicesRequest } from './models/listInvoicesRequest';
 export type { ListInvoicesResponse } from './models/listInvoicesResponse';
+export type { ListJobsRequest } from './models/listJobsRequest';
+export type { ListJobsResponse } from './models/listJobsResponse';
 export type { ListLocationBookingProfilesRequest } from './models/listLocationBookingProfilesRequest';
 export type { ListLocationBookingProfilesResponse } from './models/listLocationBookingProfilesResponse';
 export type { ListLocationCustomAttributeDefinitionsRequest } from './models/listLocationCustomAttributeDefinitionsRequest';
@@ -622,6 +629,7 @@ export type { ModifierLocationOverrides } from './models/modifierLocationOverrid
 export type { Money } from './models/money';
 export type { ObtainTokenRequest } from './models/obtainTokenRequest';
 export type { ObtainTokenResponse } from './models/obtainTokenResponse';
+export type { OfflinePaymentDetails } from './models/offlinePaymentDetails';
 export type { Order } from './models/order';
 export type { OrderCreated } from './models/orderCreated';
 export type { OrderCreatedObject } from './models/orderCreatedObject';
@@ -672,6 +680,7 @@ export type { PaymentBalanceActivityAutomaticSavingsDetail } from './models/paym
 export type { PaymentBalanceActivityAutomaticSavingsReversedDetail } from './models/paymentBalanceActivityAutomaticSavingsReversedDetail';
 export type { PaymentBalanceActivityChargeDetail } from './models/paymentBalanceActivityChargeDetail';
 export type { PaymentBalanceActivityDepositFeeDetail } from './models/paymentBalanceActivityDepositFeeDetail';
+export type { PaymentBalanceActivityDepositFeeReversedDetail } from './models/paymentBalanceActivityDepositFeeReversedDetail';
 export type { PaymentBalanceActivityDisputeDetail } from './models/paymentBalanceActivityDisputeDetail';
 export type { PaymentBalanceActivityFeeDetail } from './models/paymentBalanceActivityFeeDetail';
 export type { PaymentBalanceActivityFreeProcessingDetail } from './models/paymentBalanceActivityFreeProcessingDetail';
@@ -685,6 +694,8 @@ export type { PaymentBalanceActivityReserveHoldDetail } from './models/paymentBa
 export type { PaymentBalanceActivityReserveReleaseDetail } from './models/paymentBalanceActivityReserveReleaseDetail';
 export type { PaymentBalanceActivitySquareCapitalPaymentDetail } from './models/paymentBalanceActivitySquareCapitalPaymentDetail';
 export type { PaymentBalanceActivitySquareCapitalReversedPaymentDetail } from './models/paymentBalanceActivitySquareCapitalReversedPaymentDetail';
+export type { PaymentBalanceActivitySquarePayrollTransferDetail } from './models/paymentBalanceActivitySquarePayrollTransferDetail';
+export type { PaymentBalanceActivitySquarePayrollTransferReversedDetail } from './models/paymentBalanceActivitySquarePayrollTransferReversedDetail';
 export type { PaymentBalanceActivityTaxOnFeeDetail } from './models/paymentBalanceActivityTaxOnFeeDetail';
 export type { PaymentBalanceActivityThirdPartyFeeDetail } from './models/paymentBalanceActivityThirdPartyFeeDetail';
 export type { PaymentBalanceActivityThirdPartyFeeRefundDetail } from './models/paymentBalanceActivityThirdPartyFeeRefundDetail';
@@ -751,6 +762,7 @@ export type { RetrieveInventoryCountRequest } from './models/retrieveInventoryCo
 export type { RetrieveInventoryCountResponse } from './models/retrieveInventoryCountResponse';
 export type { RetrieveInventoryPhysicalCountResponse } from './models/retrieveInventoryPhysicalCountResponse';
 export type { RetrieveInventoryTransferResponse } from './models/retrieveInventoryTransferResponse';
+export type { RetrieveJobResponse } from './models/retrieveJobResponse';
 export type { RetrieveLocationBookingProfileResponse } from './models/retrieveLocationBookingProfileResponse';
 export type { RetrieveLocationCustomAttributeDefinitionRequest } from './models/retrieveLocationCustomAttributeDefinitionRequest';
 export type { RetrieveLocationCustomAttributeDefinitionResponse } from './models/retrieveLocationCustomAttributeDefinitionResponse';
@@ -923,6 +935,8 @@ export type { UpdateItemModifierListsRequest } from './models/updateItemModifier
 export type { UpdateItemModifierListsResponse } from './models/updateItemModifierListsResponse';
 export type { UpdateItemTaxesRequest } from './models/updateItemTaxesRequest';
 export type { UpdateItemTaxesResponse } from './models/updateItemTaxesResponse';
+export type { UpdateJobRequest } from './models/updateJobRequest';
+export type { UpdateJobResponse } from './models/updateJobResponse';
 export type { UpdateLocationCustomAttributeDefinitionRequest } from './models/updateLocationCustomAttributeDefinitionRequest';
 export type { UpdateLocationCustomAttributeDefinitionResponse } from './models/updateLocationCustomAttributeDefinitionResponse';
 export type { UpdateLocationRequest } from './models/updateLocationRequest';

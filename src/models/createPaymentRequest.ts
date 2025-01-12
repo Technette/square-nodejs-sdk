@@ -10,6 +10,10 @@ import {
   externalPaymentDetailsSchema,
 } from './externalPaymentDetails';
 import { Money, moneySchema } from './money';
+import {
+  OfflinePaymentDetails,
+  offlinePaymentDetailsSchema,
+} from './offlinePaymentDetails';
 
 /**
  * Describes a request to create a payment using
@@ -133,6 +137,15 @@ export interface CreatePaymentRequest {
   /** The buyer's email address. */
   buyerEmailAddress?: string;
   /**
+   * The buyer's phone number.
+   * Must follow the following format:
+   * 1. A leading + symbol (followed by a country code)
+   * 2. The phone number can contain spaces and the special characters `(` , `)` , `-` , and `.`.
+   * Alphabetical characters aren't allowed.
+   * 3. The phone number must contain between 9 and 16 digits.
+   */
+  buyerPhoneNumber?: string;
+  /**
    * Represents a postal address in a country.
    * For more information, see [Working with Addresses](https://developer.squareup.com/docs/build-basics/working-with-addresses).
    */
@@ -166,6 +179,8 @@ export interface CreatePaymentRequest {
   externalDetails?: ExternalPaymentDetails;
   /** Details about the customer making the payment. */
   customerDetails?: CustomerDetails;
+  /** Details specific to offline payments. */
+  offlinePaymentDetails?: OfflinePaymentDetails;
 }
 
 export const createPaymentRequestSchema: Schema<CreatePaymentRequest> = object({
@@ -188,6 +203,7 @@ export const createPaymentRequestSchema: Schema<CreatePaymentRequest> = object({
     optional(boolean()),
   ],
   buyerEmailAddress: ['buyer_email_address', optional(string())],
+  buyerPhoneNumber: ['buyer_phone_number', optional(string())],
   billingAddress: ['billing_address', optional(lazy(() => addressSchema))],
   shippingAddress: ['shipping_address', optional(lazy(() => addressSchema))],
   note: ['note', optional(string())],
@@ -203,5 +219,9 @@ export const createPaymentRequestSchema: Schema<CreatePaymentRequest> = object({
   customerDetails: [
     'customer_details',
     optional(lazy(() => customerDetailsSchema)),
+  ],
+  offlinePaymentDetails: [
+    'offline_payment_details',
+    optional(lazy(() => offlinePaymentDetailsSchema)),
   ],
 });

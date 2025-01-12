@@ -41,7 +41,8 @@ async searchEvents(
 ## Example Usage
 
 ```ts
-const body: SearchEventsRequest = {};
+const body: SearchEventsRequest = {
+};
 
 try {
   const { result, ...httpResponse } = await eventsApi.searchEvents(body);
